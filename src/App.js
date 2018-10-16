@@ -3,6 +3,7 @@ import { Map } from 'immutable';
 
 import InitState from './InitState/InitState';
 import LandingState from './LandingState/LandingState';
+import SelectState from './SelectState/SelectState';
 import './App.css';
 
 class App extends Component {
@@ -10,9 +11,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      appState : 'landing',
+      appState : 'select',
 
-      faction : null,
       team : Map({}),
     }
   }
@@ -25,12 +25,27 @@ class App extends Component {
     );
   }
 
+  setAppState = (state) => {
+    this.setState({
+      appState : state,
+    });
+  }
+
   setTeam = (team) => {
     this.setState({team : team});
   }
 
   setFaction = (faction) => {
     this.setState({faction : faction});
+  }
+
+  addCharacterToTeam = (char) => {
+    if( char instanceof Map ){
+      this.setTeam(this.state.team.push(char));
+    }
+    else{
+      console.err("Character argument not of type Map.");
+    }
   }
 
   connectToGameRoom = () => {
@@ -44,8 +59,16 @@ class App extends Component {
 
       case 'landing':
         return (
-          <LandingState>
+          <LandingState
+            team = {this.state.team}>
           </LandingState>
+        );
+
+      case 'select':
+        return (
+          <SelectState
+            team = {this.state.team}>
+          </SelectState>
         );
 
       default:

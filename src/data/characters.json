@@ -1,0 +1,24 @@
+{
+    "characters" : [
+        {
+            "name" : "reaper",
+            "portrait" : "portraits/char0_portrait.png",
+            "sprite" : ""
+        },
+        {
+            "name" : "reaper",
+            "portrait" : "portraits/char0_portrait.png",
+            "sprite" : ""
+        },
+        {
+            "name" : "reaper",
+            "portrait" : "portraits/char0_portrait.png",
+            "sprite" : ""
+        },
+        {
+            "name" : "reaper",
+            "portrait" : "portraits/char0_portrait.png",
+            "sprite" : ""
+        }
+    ]
+}

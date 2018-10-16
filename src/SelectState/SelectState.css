@@ -1,0 +1,13 @@
+ul.character-selection{
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+ul.character-selection li{
+    width: 100%;
+}
+
+div.character-panel{
+    display: inline-block;
+}
